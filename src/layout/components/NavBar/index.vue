@@ -16,7 +16,7 @@ const logout = () => {
     <div class="nav-bar-right-menu">
       <ThemeSwitch class="nav-bar-right-menu-item" />
       <el-dropdown class="nav-bar-right-menu-item">
-        <div class="nav-bar-right-menu-avatar">
+        <div class="nav-bar-right-menu-item-avatar">
           <el-avatar :src="src" :size="30" />
           <span>{{ 'admin' }}</span>
         </div>
