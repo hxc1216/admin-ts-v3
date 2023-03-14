@@ -16,6 +16,8 @@
     "element-plus": "^2.3.0",
     "pinia": "^2.0.32",
     "sass": "^1.59.2",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vite-svg-loader": "^4.0.0",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
   },
