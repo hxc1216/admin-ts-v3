@@ -1,9 +1,21 @@
 <script lang="ts" setup>
 import { AppMain, SideBar, NavBar, TagsView } from './components'
+import { useAppStore } from '@/stores/modules/app'
+import { computed } from 'vue'
+
+const appStore = useAppStore()
+
+const classObj = computed(() => {
+  return {
+    'hide-side': !appStore.sidebar.opened,
+    'open-side': appStore.sidebar.opened,
+    withoutAnimation: appStore.sidebar.withoutAnimation
+  }
+})
 </script>
 <template>
   <!-- hide-side -->
-  <div class="app-wrapper">
+  <div class="app-wrapper" :class="classObj">
     <div class="sidebar-wrapper">
       <SideBar></SideBar>
     </div>
@@ -28,7 +40,7 @@ import { AppMain, SideBar, NavBar, TagsView } from './components'
 
 .sidebar-wrapper {
   transition: width 0.28s;
-  width: var(--sidebar-width) !important;
+  width: var(--sidebar-width);
   height: 100%;
   position: fixed;
   font-size: 0px;

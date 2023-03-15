@@ -1,0 +1,16 @@
+/** element-plus 相关 */
+
+.el-switch {
+
+    .el-switch__core {
+        background: $bg-color-mute;
+        border-color: $border-color;
+
+        .el-switch__inner {
+
+            .is-icon {
+                color: $font-color;
+            }
+        }
+    }
+}

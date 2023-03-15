@@ -1,19 +1,33 @@
 <script lang="ts" setup>
 import { useRouter } from 'vue-router'
 import ThemeSwitch from '@/components/ThemeSwitch/index.vue'
+import ScreenFull from '@/components/ScreenFull/index.vue'
+import Hamburger from '../Hamburger/index.vue'
+import { computed, reactive } from 'vue'
+import { useAppStore } from '@/stores/modules/app'
 
 const router = useRouter()
-
+const appstore = useAppStore()
 const src = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'
 
 const logout = () => {
   router.push('/login')
 }
+
+const sidebar = computed(() => {
+  return appstore.sidebar
+})
+
+const sidebarToggle = () => {
+  appstore.toggleSidebar(false)
+}
 </script>
 
 <template>
   <div class="nav-bar">
+    <Hamburger :is-active="sidebar.opened" class="hamburger" @toggle-click="sidebarToggle" />
     <div class="nav-bar-right-menu">
+      <ScreenFull />
       <ThemeSwitch class="nav-bar-right-menu-item" />
       <el-dropdown class="nav-bar-right-menu-item">
         <div class="nav-bar-right-menu-item-avatar">
@@ -45,6 +59,15 @@ const logout = () => {
   height: var(--navbar-height);
   background: #fff;
   overflow: hidden;
+
+  .hamburger {
+    float: left;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    height: 100%;
+    cursor: pointer;
+  }
 
   &-right-menu {
     float: right;

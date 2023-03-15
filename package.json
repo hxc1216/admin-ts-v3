@@ -13,9 +13,11 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.1.0",
     "element-plus": "^2.3.0",
     "pinia": "^2.0.32",
     "sass": "^1.59.2",
+    "screenfull": "^6.0.2",
     "vite-plugin-svg-icons": "^2.0.1",
     "vite-svg-loader": "^4.0.0",
     "vue": "^3.2.47",
@@ -40,5 +42,16 @@
     "vite": "^4.1.4",
     "vitest": "^0.29.1",
     "vue-tsc": "^1.2.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true,
+      "vue/setup-compiler-macros": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ]
   }
 }

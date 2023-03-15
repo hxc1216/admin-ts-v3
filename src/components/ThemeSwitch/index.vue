@@ -1,11 +1,22 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
-const value = ref(false)
+import { Light, Dark } from '@/icons/coms/index.ts'
+import { useTheme, type ThemeName } from '@/hooks/useTheme'
+
+const { themeList, activeThemeName, setTheme } = useTheme()
+
+const themeChange = (name: ThemeName) => {
+  setTheme(name)
+}
 </script>
 
 <template>
-  <!-- active-icon  inactive-icon -->
-  <el-switch v-model="value" />
-  <svg-icon name="dark-icon" />
-  <svg-icon name="light-icon" />
+  <el-switch
+    v-model="activeThemeName"
+    @change="themeChange"
+    active-value="dark"
+    inactive-value="normal"
+    inline-prompt
+    :inactive-icon="Light"
+    :active-icon="Dark"
+  />
 </template>
