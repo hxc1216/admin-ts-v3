@@ -27,7 +27,7 @@ const sidebarToggle = () => {
   <div class="nav-bar">
     <Hamburger :is-active="sidebar.opened" class="hamburger" @toggle-click="sidebarToggle" />
     <div class="nav-bar-right-menu">
-      <ScreenFull />
+      <ScreenFull class="nav-bar-right-menu-item" />
       <ThemeSwitch class="nav-bar-right-menu-item" />
       <el-dropdown class="nav-bar-right-menu-item">
         <div class="nav-bar-right-menu-item-avatar">

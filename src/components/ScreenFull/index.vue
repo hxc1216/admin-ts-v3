@@ -48,10 +48,8 @@ onUnmounted(() => {
 </script>
 <template>
   <div @click="clickHandle">
-    <!-- <el-icon><Fullscreen /></el-icon>
-    <el-icon><FullscreenExit /></el-icon> -->
-    <svg-icon name="fullscreen"></svg-icon>
-    <svg-icon name="fullscreen-exit"></svg-icon>
+    <svg-icon v-if="!isFullScreen" name="fullscreen"></svg-icon>
+    <svg-icon v-else name="fullscreen-exit"></svg-icon>
   </div>
 </template>
 <style lang="scss" scoped>
