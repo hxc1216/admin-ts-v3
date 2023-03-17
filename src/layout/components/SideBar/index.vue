@@ -2,18 +2,19 @@
 import { useAppStore } from '@/stores/modules/app'
 import { computed } from 'vue'
 import SideBarLogo from './SideBarLogo.vue'
-import SidebarItem from './SidebarItem.vue';
-import {useRoute} from 'vue-router';
+import SidebarItem from './SidebarItem.vue'
+import { useRoute } from 'vue-router'
+import { menuList } from './menu.ts'
 
 const appStore = useAppStore()
-const route = useRoute();
+const route = useRoute()
 
 const isCollapse = computed(() => {
   return !appStore.sidebar.opened
 })
 
-const activeMenu = computed(()=>{
-  const {meta,path} = route
+const activeMenu = computed(() => {
+  const { meta, path } = route
   return path
 })
 </script>
@@ -32,12 +33,16 @@ const activeMenu = computed(()=>{
         mode="vertical"
       >
         <!-- <SidebarItem
-          v-for="route in permissionStore.routes"
+          v-for="route in menuList"
           :key="route.path"
           :item="route"
           :base-path="route.path"
           :is-collapse="isCollapse"
         /> -->
+        <el-menu-item :index="route.path" v-for="route in menuList[0].children" :key="route.path">
+          <el-icon><icon-menu /></el-icon>
+          <span>{{ route.name }}</span>
+        </el-menu-item>
       </el-menu>
     </el-scrollbar>
   </div>
