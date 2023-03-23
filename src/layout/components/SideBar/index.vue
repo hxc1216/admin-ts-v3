@@ -17,6 +17,7 @@ const activeMenu = computed(() => {
   const { meta, path } = route
   return path
 })
+
 </script>
 <template>
   <div>
@@ -39,7 +40,11 @@ const activeMenu = computed(() => {
           :base-path="route.path"
           :is-collapse="isCollapse"
         /> -->
-        <el-menu-item :index="route.path" v-for="route in menuList[0].children" :key="route.path">
+        <el-menu-item
+          :index="route.path"
+          v-for="route in menuList[0].children"
+          :key="route.path"
+        >
           <el-icon><icon-menu /></el-icon>
           <span>{{ route.name }}</span>
         </el-menu-item>

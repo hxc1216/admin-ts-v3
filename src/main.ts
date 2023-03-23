@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import store from '@/stores'
 import App from './App.vue'
 import router from './router'
+import "@/router/permission"
 import ElementPlus from 'element-plus'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 

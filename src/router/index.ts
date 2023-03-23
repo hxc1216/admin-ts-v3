@@ -25,13 +25,25 @@ const router = createRouter({
           component: () => import('@/views/dashboard/index.vue'),
           name: 'Dashboard',
           meta: {
-            title: '首页',
+            title: '首页'
             // svgIcon: 'dashboard',
             // affix: true
           }
         }
       ]
-    }
+    },
+    {
+      path: '/403',
+      component: () => import('@/views/err-page/403.vue')
+    },
+    {
+      path: '/404',
+      component: () => import('@/views/err-page/404.vue')
+    },
+    {
+      path: '/login',
+      component: () => import('@/views/login/index.vue')
+    },
   ]
 })
 

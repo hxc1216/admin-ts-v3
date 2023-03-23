@@ -1,4 +1,5 @@
 .#{$theme-name} {
+    @import "./login.scss";
     @import "./layout.scss";
     @import "./element-plus.scss";
 }

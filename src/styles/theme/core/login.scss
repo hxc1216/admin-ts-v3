@@ -1,0 +1,9 @@
+/** login 相关 */
+.login-container {
+    background-color: $theme-bg-color;
+    color: $font-color;
+
+    .login-wrap {
+        background-color: lighten($theme-bg-color, 4%) !important;
+    }
+}

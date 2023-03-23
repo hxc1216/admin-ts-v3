@@ -5,12 +5,14 @@ import ScreenFull from '@/components/ScreenFull/index.vue'
 import Hamburger from '../Hamburger/index.vue'
 import { computed, reactive } from 'vue'
 import { useAppStore } from '@/stores/modules/app'
+import {useUserStore} from '@/stores/modules/user';
 
 const router = useRouter()
 const appstore = useAppStore()
 const src = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'
 
 const logout = () => {
+  useUserStore().logout()
   router.push('/login')
 }
 
